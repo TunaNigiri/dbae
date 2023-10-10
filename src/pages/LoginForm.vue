@@ -1,22 +1,22 @@
 <template>
   <q-page class="flex flex-center">
     <div class="wrapper">
-      <h3 class="flex flex-center">DBAE</h3>
-        <q-form>
+      <h3 class="flex flex-center q-ml-lg">DBAE</h3>
+        <q-form class="flex-center">
           
-          <div class="flex flex-row flex-center">
+          <div class="flex flex-col flex-center">
             <q-icon size="lg"  name="person"/>
             <q-input class="q-pa-none" rounded outlined v-model="text" label="" />
           </div>
-          <div class="flex flex-row flex-center">
+          <div class="flex flex-center">
             <q-icon size="lg"  name="key"/>
             <q-input rounded outlined v-model="text" label="" />
           </div>
-
-          <q-btn>
-            
-          </q-btn>
-
+          <div class="flex flex-center">
+            <q-btn class="q-ml-lg q-mt-md" >
+                Login
+            </q-btn>
+          </div>
         </q-form>
     </div>
   </q-page>
