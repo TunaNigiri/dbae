@@ -4,16 +4,16 @@
       <h3 class="flex flex-center q-ml-lg">DBAE</h3>
         <q-form class="flex-center">
           
-          <div class="flex flex-col flex-center">
+          <div class="flex flex-col flex-center q-mr-sm">
             <q-icon size="lg"  name="person"/>
-            <q-input class="q-pa-none" rounded outlined v-model="text" label="" />
+            <q-input class="q-pa-none" rounded outlined v-model="this.inputName" label=""  />
           </div>
-          <div class="flex flex-center">
+          <div class="flex flex-center q-mr-sm">
             <q-icon size="lg"  name="key"/>
-            <q-input rounded outlined v-model="text" label="" />
+            <q-input rounded outlined v-model="this.inputPassword" label="" />
           </div>
           <div class="flex flex-center">
-            <q-btn class="q-ml-lg q-mt-md" >
+            <q-btn class="q-ml-lg q-mt-md" @click="login()">
                 Login
             </q-btn>
           </div>
@@ -45,7 +45,8 @@ import { defineAsyncComponent} from 'vue';
                 this.disableButton = true
                 if (this.inputName === this.userName && this.inputPassword === this.password){
                     this.loginButton = "Loading"
-                    this.popUpColor = "green"
+                    this.$router.push({name: 'homePage'})
+                    console.log("Yes")
                     this.popUpText = "Bienvenido"
                 }
                 else {

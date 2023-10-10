@@ -5,10 +5,10 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', name: 'LoginForm', component: () => import('pages/LoginForm.vue') },
-      { path: '/home', name:'home', component: () => import('pages/HomePage.vue') }
     ]
   },
-
+  
+  { path: '/homePage', name:'homePage', component: () => import('pages/HomePage.vue') },
   
   // Always leave this as last one,
   // but you can also remove it
