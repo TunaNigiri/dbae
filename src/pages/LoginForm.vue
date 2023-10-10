@@ -10,11 +10,19 @@
           </div>
           <div class="flex flex-center q-mr-sm">
             <q-icon size="lg"  name="key"/>
-            <q-input rounded outlined v-model="this.inputPassword" label="" />
+            <q-input rounded outlined v-model="this.inputPassword" type="password" label="" />
           </div>
           <div class="flex flex-center">
-            <q-btn class="q-ml-lg q-mt-md" @click="login()">
-                Login
+            <q-btn class="q-ml-lg q-mt-md" @click="login()" label="Login">
+              <q-popup-proxy>
+                <q-banner class="flex flex-center" >
+                  <template v-slot:avatar>
+                      <q-icon name="warning" color="primary" />
+                       </template>
+                      Invalid Password or Username
+                  </q-banner>
+              </q-popup-proxy>
+
             </q-btn>
           </div>
         </q-form>
@@ -46,7 +54,6 @@ import { defineAsyncComponent} from 'vue';
                 if (this.inputName === this.userName && this.inputPassword === this.password){
                     this.loginButton = "Loading"
                     this.$router.push({name: 'homePage'})
-                    console.log("Yes")
                     this.popUpText = "Bienvenido"
                 }
                 else {
