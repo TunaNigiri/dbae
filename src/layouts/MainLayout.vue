@@ -19,6 +19,8 @@
       <q-btn class="flex flex-container" v-for="module in menuModules" :key="module.id" @click="goToModule(module.name)" >
           {{ module.name }}
       </q-btn>
+
+      <q-btn @click="logOut()">Log Out</q-btn>
       
     </q-drawer>
 
@@ -50,6 +52,9 @@ export default {
       },
       goToModule(name) {
         this.$router.push({name: name})
+      },
+      logOut() {
+        this.$router.push({name: 'LoginForm'})
       }
   }
 }
