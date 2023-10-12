@@ -5,23 +5,21 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Title
+        <q-toolbar-title> 
+          D4BAE
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer class="cajon" show-if-above v-model="leftDrawerOpen" side="left" bordered>
+        <span>
+          <q-btn class="cajon1" v-for="module in menuModules" :key="module.id" @click="goToModule(module.name)" >
+              {{ module.name }}
+          </q-btn>
+        </span>
+        
+        <q-btn class="cajon2" @click="logOut()">Log Out</q-btn>
 
-      <q-btn class="flex flex-container" v-for="module in menuModules" :key="module.id" @click="goToModule(module.name)" >
-          {{ module.name }}
-      </q-btn>
-
-      <q-btn @click="logOut()">Log Out</q-btn>
-      
     </q-drawer>
 
     <q-page-container>
@@ -61,3 +59,20 @@ export default {
   
   
 </script>
+
+<style>
+.cajon {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh !important;
+}
+.cajon1 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.cajon2 {
+  width: 100%;
+}
+</style>

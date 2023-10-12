@@ -1,5 +1,5 @@
 <template>
-    <h1 class="flex flex-center">Users</h1>
+    <h4 class="flex flex-center">Users</h4>
     <div class="flex flex-container">
       <q-btn class="" v-for="role in menuRoles" :key="role.id" @click="showUsers(role.id)"  >
           {{ role.name }}
